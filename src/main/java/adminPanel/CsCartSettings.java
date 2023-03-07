@@ -3,6 +3,10 @@ package adminPanel;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -21,8 +25,10 @@ public class CsCartSettings {
     public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
     public SelenideElement menuSettings = $(".dropdown-toggle.settings");
     public SelenideElement sectionAppearance = $("#elm_menu_settings_Appearance");
-    public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
+    public SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
+    public SelenideElement setting_QuickView = $("#field___enable_quick_view_290");
     public SelenideElement menuDesign = $("#elm_menu_design");
+    public SelenideElement sectionProductTabs = $(By.id("elm_menu_design_product_tabs"));
     public SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle"); //Для примера!!!!!
     public SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']"); //Для примера!!!!!
 
@@ -31,6 +37,14 @@ public class CsCartSettings {
         menuProducts.hover();
         sectionProducts.click();
         return new ProductSettings();
+    }
+    public void navigateToAppearanceSettings(){
+        menuSettings.hover();
+        sectionAppearance.click();
+    }
+    public void navigateToProductTabs(){
+        menuDesign.hover();
+        sectionProductTabs.click();
     }
     public void navigateToAddonsPage(){
         menuAddons.hover();

@@ -8,5 +8,6 @@ public class TestCaseOne {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
         productSettings.goToEditingProductPage("Wii U DELUXE");
+        productSettings.navigateToProductPage(1);
     }
 }

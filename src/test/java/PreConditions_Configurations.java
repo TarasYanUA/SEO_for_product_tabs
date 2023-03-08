@@ -7,12 +7,14 @@ import static com.codeborne.selenide.Selenide.$;
 
 /*
 Устанавливаем следующие настройки:
-- Настройки -- Внешний вид -- Показывать информацию о товаре во вкладках -- выкл.
+- Настройки -> Внешний вид -> Показывать информацию о товаре во вкладках -- выкл.
 - Настройки модуля:
     * Добавить навигационную панель вкладок на странице товара -- Да
     * Позиция навигационной панели вкладок -- Перед вкладками товара
 - Настраиваем вкладки товара
-- Проверяем на странице товара с опциями "Wii U DELUXE"
+- ПНастраиваем страницу товара с опциями "Wii U DELUXE":
+    * шаблон "Большая картинка, плоский"
+    * добавляем тег
 */
 
 public class PreConditions_Configurations extends TestRunner{
@@ -48,6 +50,14 @@ public class PreConditions_Configurations extends TestRunner{
         setProductTab("Отзывы (Показывать содержимое вкладки)", "Отзывы [<]о [product][>] от реальных покупателей");
         csCartSettings.tabName_RequiredProducts.click();
         setProductTab("Обязательные товары", "[tab_name]");
+
+        //Настраиваем товар
+        ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        productSettings.goToEditingProductPage("Wii U DELUXE");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
+        productSettings.tab_Tags.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.clickAndType_TagName("Sport");
+        csCartSettings.button_Save.click();
     }
 
     public void setProductTab (String name, String header){

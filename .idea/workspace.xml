@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Created a structure of classes.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Configurations.java" afterDir="false" />
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Started the first test-case.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Configurations" />
+      <option name="MAIN_CLASS_NAME" value="PreConditions_Configurations" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -57,7 +59,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Configurations" />
+        <item itemvalue="TestNG.PreConditions_Configurations" />
       </list>
     </recent_temporary>
   </component>
@@ -84,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678202504902</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started the first test-case.">
+      <created>1678205115930</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678205115930</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +109,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a structure of classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a structure of classes." />
+    <MESSAGE value="Started the first test-case." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started the first test-case." />
   </component>
 </project>

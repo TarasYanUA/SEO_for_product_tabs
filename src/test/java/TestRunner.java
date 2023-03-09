@@ -23,6 +23,7 @@ public class TestRunner {
         open(BASIC_URL);
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
+        $(".cm-notification-close").click();
     }
 
     @AfterClass

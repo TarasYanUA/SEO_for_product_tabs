@@ -1,20 +1,25 @@
 import adminPanel.CsCartSettings;
 import adminPanel.ProductSettings;
 import adminPanel.SeoTabsSettings;
+import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.$;
 
 /*
 Устанавливаем следующие настройки:
-- Настройки -> Внешний вид -> Показывать информацию о товаре во вкладках -- выкл.
+- Настройки -> Внешний вид -> Показывать информацию о товаре во вкладках -- Нет
 - Настройки модуля:
     * Добавить навигационную панель вкладок на странице товара -- Да
     * Позиция навигационной панели вкладок -- Перед вкладками товара
+- Настройки темы Юни2:
+    * Верхняя липкая панель -- Да
 - Настраиваем вкладки товара
 - Настраиваем страницу товара с опциями "Wii U DELUXE":
     * шаблон "Большая картинка, плоский"
+    * вписываем значение в поле модуля "AB: Краткое название товара"
     * добавляем тег
+    * добавляем обязательный товар
 */
 
 public class PreConditions_Configurations extends TestRunner{
@@ -22,7 +27,7 @@ public class PreConditions_Configurations extends TestRunner{
     public void setConfigurations() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
+/*        csCartSettings.navigateToAppearanceSettings();
         if(csCartSettings.setting_DisplayProductDetailsInTabs.isSelected()) {
             csCartSettings.setting_DisplayProductDetailsInTabs.click();
             csCartSettings.button_Save.click();
@@ -38,6 +43,13 @@ public class PreConditions_Configurations extends TestRunner{
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("before_tabs");
         seoTabsSettings.button_SaveSettings.click();
 
+        //Настраиваем настройки темы Юни2
+        csCartSettings.navigateToAddonsPage();
+        UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
+        if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
+            uniThemeSettings.setting_TopStickyPanel.click();
+            csCartSettings.button_Save.click(); }
+
         //Настраиваем вкладки товара
         csCartSettings.navigateToProductTabs();
         csCartSettings.tabName_Description.click();
@@ -49,14 +61,24 @@ public class PreConditions_Configurations extends TestRunner{
         csCartSettings.tabName_Reviews.click();
         setProductTab("Отзывы (Показывать содержимое вкладки)", "Отзывы [<]о [product][>] от реальных покупателей");
         csCartSettings.tabName_RequiredProducts.click();
-        setProductTab("Обязательные товары", "[tab_name]");
+        setProductTab("Обязательные товары", "[tab_name]");*/
 
         //Настраиваем товар
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        productSettings.closeNotificationWindowOfCore.click();
         productSettings.goToEditingProductPage("Wii U DELUXE");
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        productSettings.tab_Tags.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.tab_Addons.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.clickAndType_ShortName("ShortName");
+        productSettings.tab_Tags.click();
         productSettings.clickAndType_TagName("Sport");
+        productSettings.tab_RequiredProducts.click();
+        if(!$(".cm-object-picker-object.object-picker__selection-extended").exists()){
+            productSettings.button_Picker.click();
+            $(".ui-dialog-title").shouldBe(Condition.enabled);
+            productSettings.pickAProduct.click();
+            productSettings.button_AddProductsAndClose.click();
+        }
         csCartSettings.button_Save.click();
     }
 

@@ -1,6 +1,5 @@
 package adminPanel;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -13,13 +12,18 @@ public class CsCartSettings {
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement popupWindow = $(".ui-dialog-title");
 
+    //Страница "Скачанные модули"
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
+    public SelenideElement menu_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
+    public SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
+    public SelenideElement menu_UniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
+    public SelenideElement section_ThemeSettings = $("div.nowrap a[href$='abt__ut2.settings']");
+
     public SelenideElement menuProducts = $x("//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']");
     public SelenideElement sectionProducts = $x("//span[text()='Товары']");
     public SelenideElement gearWheelOnTop = $(".dropdown-icon--tools");
     public SelenideElement button_Preview = $x("//a[contains(text(), 'Предпросмотр')]");
-    public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
     public SelenideElement menuSettings = $(".dropdown-toggle.settings");
     public SelenideElement sectionAppearance = $("#elm_menu_settings_Appearance");
     public SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
@@ -27,8 +31,6 @@ public class CsCartSettings {
     //Меню -- Дизайн -- Вкладки товара
     public SelenideElement menuDesign = $("#elm_menu_design");
     public SelenideElement sectionProductTabs = $(By.id("elm_menu_design_product_tabs"));
-    public SelenideElement menu_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
-    public SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
     public SelenideElement tabName_Description = $(".cm-sortable-id-1 a");
     public SelenideElement tabName_Features = $(".cm-sortable-id-2 a");
     public SelenideElement tabName_Tags = $(".cm-sortable-id-4 a");
@@ -64,6 +66,11 @@ public class CsCartSettings {
         section_SeoTabsSettings.click();
         return new SeoTabsSettings();
     }
+    public UniThemeSettings navigateToThemeSettings(){
+        menu_UniTheme.click();
+        section_ThemeSettings.click();
+        return new UniThemeSettings();
+    }
     public ProductPage navigateToProductPage(int tabNumber){
         button_Save.click();
         Selenide.sleep(2000);
@@ -81,10 +88,6 @@ public class CsCartSettings {
         field_TabHeader.click();
         field_TabHeader.clear();
         field_TabHeader.setValue(value);
-    }
-    public void cookieNotice(){
-        $(".cookie-notice").shouldBe(Condition.interactable);
-        $(".cm-btn-success").click();
     }
     public void shiftBrowserTab(int tabNumber){
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);

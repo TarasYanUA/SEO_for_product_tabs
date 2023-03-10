@@ -71,14 +71,6 @@ public class CsCartSettings {
         section_ThemeSettings.click();
         return new UniThemeSettings();
     }
-    public ProductPage navigateToProductPage(int tabNumber){
-        button_Save.click();
-        Selenide.sleep(2000);
-        gearWheelOnTop.click();
-        button_Preview.click();
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
-        return new ProductPage();
-    }
     public void clickAndType_TabName(String value){
         field_Name.click();
         field_Name.clear();

@@ -43,13 +43,6 @@ public class PreConditions_Configurations extends TestRunner{
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("before_tabs");
         seoTabsSettings.button_SaveSettings.click();
 
-        //Настраиваем настройки темы Юни2
-        csCartSettings.navigateToAddonsPage();
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
-        if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
-            uniThemeSettings.setting_TopStickyPanel.click();
-            csCartSettings.button_Save.click(); }
-
         //Настраиваем вкладки товара
         csCartSettings.navigateToProductTabs();
         csCartSettings.tabName_Description.click();

@@ -1,5 +1,6 @@
 import adminPanel.CsCartSettings;
 import adminPanel.ProductSettings;
+import adminPanel.SeoTabsSettings;
 import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
@@ -7,31 +8,39 @@ import org.testng.annotations.Test;
 import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.$;
 
-public class TestCaseOne extends TestRunner
-{
+public class TestCaseTwo extends TestRunner{
     @Test
-    public void checkProductPage_TestCaseOne() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+    public void checkProductPage_TestCaseTwo(){
         //Включаем верхнюю липкую панель темы
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
         if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
             uniThemeSettings.setting_TopStickyPanel.click();
             csCartSettings.button_Save.click(); }
 
+        //Настраиваем настройки модуля
+        csCartSettings.navigateToAddonsPage();
+        SeoTabsSettings seoTabsSettings = csCartSettings.navigateToSeoTabsSettings();
+        seoTabsSettings.tab_Settings.click();
+        if(!seoTabsSettings.setting_AddNavigationPanel.isSelected()){
+            seoTabsSettings.setting_AddNavigationPanel.click();
+        }
+        seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("after_h1");
+        seoTabsSettings.button_SaveSettings.click();
+
         //Переходим на витрину
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
         productSettings.goToEditingProductPage("Wii U DELUXE");
         ProductPage productPage = productSettings.navigateToProductPage(1);
         selectLanguage_RU();
-        productPage.tabPanel.scrollTo();
         Selenide.sleep(1000);
         //Проверка, что панель товарных вкладок от модуля присутствуют
         Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
-        //Проверка, что панель товарных вкладок расположена перед вкладками товара
-        Assert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
-                "Position of the product tabs panel is not before tabs!");
-        Selenide.screenshot("100 Product tabs panel - Panel before product tabs, Top sticky panel-On");
+        //Проверка, что панель товарных вкладок расположена после заголовка Н1
+        Assert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
+                "Position of the product tabs panel is not after H1 header!");
+        Selenide.screenshot("200 Product tabs panel - Panel before product tabs, Top sticky panel-On");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
         //Проверяем, что краткое название товара присутствует
@@ -39,7 +48,7 @@ public class TestCaseOne extends TestRunner
         String actualText = $(".tab-list-title").getText();
         Assert.assertTrue(actualText.contains(expectedText),
                 "There is no product short name!");
-        Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On, Short name");
+        Selenide.screenshot("210 Floating panel - Panel before product tabs, Top sticky panel-On, Short name");
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
@@ -50,11 +59,10 @@ public class TestCaseOne extends TestRunner
             csCartSettings.button_Save.click(); }
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
-        productPage.tabPanel.scrollTo();
         Selenide.sleep(1000);
-        Selenide.screenshot("120 Product tabs panel - Panel before product tabs, Top sticky panel-Off");
+        Selenide.screenshot("220 Product tabs panel - Panel after H1, Top sticky panel-Off");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
-        Selenide.screenshot("130 Floating panel - Panel before product tabs, Top sticky panel-Off, Short name");
+        Selenide.screenshot("230 Floating panel - Panel after H1, Top sticky panel-Off, Short name");
     }
 }

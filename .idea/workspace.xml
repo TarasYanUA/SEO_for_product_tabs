@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Added UniTheme setting, required product and short name for a product to Configurations.">
-      <change afterPath="$PROJECT_DIR$/testNG.xml" afterDir="false" />
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Test-case 1 is ready! File testng is added.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     "last_opened_file_path": "C:/Idea Projects/Stickers/TestNG.xml"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.TestCaseOne.productPage">
+  <component name="RunManager" selected="TestNG.TestCaseTwo">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,10 +80,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCaseTwo" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SEO_for_product_tabs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseOne.productPage" />
+        <item itemvalue="TestNG.TestCaseTwo" />
         <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.TestCaseOne.productPage" />
         <item itemvalue="TestNG.PreConditions_Configurations" />
       </list>
     </recent_temporary>
@@ -147,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678368162511</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test-case 1 is ready! File testng is added.">
+      <created>1678456666443</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678456666443</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +185,7 @@
     <MESSAGE value="Configurations of the settings are ready!" />
     <MESSAGE value="Configurations are ready!" />
     <MESSAGE value="Added UniTheme setting, required product and short name for a product to Configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UniTheme setting, required product and short name for a product to Configurations." />
+    <MESSAGE value="Test-case 1 is ready! File testng is added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case 1 is ready! File testng is added." />
   </component>
 </project>

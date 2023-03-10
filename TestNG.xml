@@ -1,0 +1,8 @@
+<suite name="SEO_for_product_tabs">
+    <test name="Test-cases for the add-on 'SEO for product tabs'">
+        <classes>
+            <class name="PreConditions_Configurations" />
+            <class name="TestCaseOne" />
+        </classes>
+    </test>
+</suite>

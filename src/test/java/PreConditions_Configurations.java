@@ -27,7 +27,7 @@ public class PreConditions_Configurations extends TestRunner{
     public void setConfigurations() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-/*        csCartSettings.navigateToAppearanceSettings();
+        csCartSettings.navigateToAppearanceSettings();
         if(csCartSettings.setting_DisplayProductDetailsInTabs.isSelected()) {
             csCartSettings.setting_DisplayProductDetailsInTabs.click();
             csCartSettings.button_Save.click();
@@ -61,11 +61,12 @@ public class PreConditions_Configurations extends TestRunner{
         csCartSettings.tabName_Reviews.click();
         setProductTab("Отзывы (Показывать содержимое вкладки)", "Отзывы [<]о [product][>] от реальных покупателей");
         csCartSettings.tabName_RequiredProducts.click();
-        setProductTab("Обязательные товары", "[tab_name]");*/
+        setProductTab("Обязательные товары", "[tab_name]");
 
         //Настраиваем товар
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
-        productSettings.closeNotificationWindowOfCore.click();
+        if(productSettings.closeNotificationWindowOfCore.exists()){
+            productSettings.closeNotificationWindowOfCore.click(); }
         productSettings.goToEditingProductPage("Wii U DELUXE");
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         productSettings.tab_Addons.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();

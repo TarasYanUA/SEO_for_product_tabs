@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 /*
 Модуль "SEO для товарных вкладок" + UniTheme2(UltRu) 4.16.1b.
-Запускать через файл TestNG.xml
+Запускать через файл TestNG.xml или каждый тест-кейс по отдельности.
 Скриншоты смотреть в папке: reports -> tests
  */
 
@@ -31,10 +31,6 @@ public class TestRunner {
         Selenide.closeWebDriver();
     }
 
-    public void selectLanguage_RTL() {
-        $("a[id*='_wrap_language_']").hover().click();
-        $(".ty-select-block__list-item a[data-ca-name='ar']").click();
-    }
     public void selectLanguage_RU() {
         $("a[id*='_wrap_language_']").hover().click();
         $(".ty-select-block__list-item a[data-ca-name='ru']").click();

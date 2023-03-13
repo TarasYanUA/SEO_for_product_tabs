@@ -29,15 +29,16 @@ public class TestCase1_BeforeProductTabs extends TestRunner
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
         productSettings.goToEditingProductPage("Wii U DELUXE");
         ProductPage productPage = productSettings.navigateToProductPage(1);
+        closeCookieNotice();
         selectLanguage_RU();
-        productPage.tabPanel.scrollTo();
+        productPage.tabPanel.hover();
         Selenide.sleep(1000);
         //Проверка, что панель товарных вкладок от модуля присутствуют
         Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
         //Проверка, что панель товарных вкладок расположена перед вкладками товара
         Assert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
                 "Position of the product tabs panel is not before tabs!");
-        Selenide.screenshot("100 Product tabs panel - Panel before product tabs, Top sticky panel-On");
+        Selenide.screenshot("100 Product tabs panel - Panel before product tabs, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
         //Проверяем, что краткое название товара присутствует
@@ -51,7 +52,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
             }
         }
         Assert.assertEquals(result, expectedWord, "There is no product short name!");
-        Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On, Short name");
+        Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On");
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
@@ -62,11 +63,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
             csCartSettings.button_Save.click(); }
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
-        productPage.tabPanel.scrollTo();
         Selenide.sleep(1000);
-        Selenide.screenshot("120 Product tabs panel - Panel before product tabs, Top sticky panel-Off");
-        productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1000);
-        Selenide.screenshot("130 Floating panel - Panel before product tabs, Top sticky panel-Off, Short name");
+        Selenide.screenshot("120 Floating panel - Panel before product tabs, Top sticky panel-Off");
     }
 }

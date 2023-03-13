@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterClass;
@@ -34,5 +35,9 @@ public class TestRunner {
     public void selectLanguage_RU() {
         $("a[id*='_wrap_language_']").hover().click();
         $(".ty-select-block__list-item a[data-ca-name='ru']").click();
+    }
+    public void closeCookieNotice(){
+        $(".cookie-notice").shouldBe(Condition.interactable);
+        $(".cm-btn-success").click();
     }
 }

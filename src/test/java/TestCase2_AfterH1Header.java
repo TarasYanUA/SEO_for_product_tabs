@@ -36,14 +36,16 @@ public class TestCase2_AfterH1Header extends TestRunner{
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
         productSettings.goToEditingProductPage("Wii U DELUXE");
         ProductPage productPage = productSettings.navigateToProductPage(1);
+        closeCookieNotice();
         selectLanguage_RU();
+        productPage.tabPanel.hover();
         Selenide.sleep(1000);
         //Проверка, что панель товарных вкладок от модуля присутствуют
         Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
         //Проверка, что панель товарных вкладок расположена после заголовка Н1
         Assert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
                 "Position of the product tabs panel is not after H1 header!");
-        Selenide.screenshot("200 Product tabs panel - Panel after H1, Top sticky panel-On");
+        Selenide.screenshot("200 Product tabs panel - Panel after H1, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
         //Проверяем, что краткое название товара присутствует
@@ -57,7 +59,7 @@ public class TestCase2_AfterH1Header extends TestRunner{
             }
         }
         Assert.assertEquals(result, expectedWord, "There is no product short name!");
-        Selenide.screenshot("210 Floating panel - Panel after H1, Top sticky panel-On, Short name");
+        Selenide.screenshot("210 Floating panel - Panel after H1, Top sticky panel-On");
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
@@ -69,9 +71,6 @@ public class TestCase2_AfterH1Header extends TestRunner{
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
         Selenide.sleep(1000);
-        Selenide.screenshot("220 Product tabs panel - Panel after H1, Top sticky panel-Off");
-        productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1000);
-        Selenide.screenshot("230 Floating panel - Panel after H1, Top sticky panel-Off, Short name");
+        Selenide.screenshot("230 Floating panel - Panel after H1, Top sticky panel-Off");
     }
 }

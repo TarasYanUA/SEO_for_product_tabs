@@ -4,6 +4,7 @@
             <class name="PreConditions_Configurations" />
             <class name="TestCase1_BeforeProductTabs" />
             <class name="TestCase2_AfterH1Header" />
+            <class name="TestCase3_Responsive" />
         </classes>
     </test>
 </suite>

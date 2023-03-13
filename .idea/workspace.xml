@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Test-case 1 is ready! File testng is added.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Test-case 2 is ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Idea Projects/Stickers/TestNG.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/TestNG.xml&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.TestCaseTwo">
+}</component>
+  <component name="RunManager" selected="TestNG.TestCase2_AfterH1Header">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -57,10 +57,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase1_BeforeProductTabs" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
+      <option name="MAIN_CLASS_NAME" value="TestCase1_BeforeProductTabs" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -68,10 +68,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseOne.productPage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase1_BeforeProductTabs.productPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
+      <option name="MAIN_CLASS_NAME" value="TestCase1_BeforeProductTabs" />
       <option name="METHOD_NAME" value="productPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -80,10 +80,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseTwo" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase2_AfterH1Header" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
+      <option name="MAIN_CLASS_NAME" value="TestCase2_AfterH1Header" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -93,9 +93,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseTwo" />
-        <item itemvalue="TestNG.TestCaseOne" />
-        <item itemvalue="TestNG.TestCaseOne.productPage" />
+        <item itemvalue="TestNG.TestCase2_AfterH1Header" />
+        <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
+        <item itemvalue="TestNG.TestCase1_BeforeProductTabs.productPage" />
         <item itemvalue="TestNG.PreConditions_Configurations" />
       </list>
     </recent_temporary>
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678456666443</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Test-case 2 is ready!">
+      <created>1678460461292</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678460461292</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +193,7 @@
     <MESSAGE value="Configurations are ready!" />
     <MESSAGE value="Added UniTheme setting, required product and short name for a product to Configurations." />
     <MESSAGE value="Test-case 1 is ready! File testng is added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case 1 is ready! File testng is added." />
+    <MESSAGE value="Test-case 2 is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case 2 is ready!" />
   </component>
 </project>

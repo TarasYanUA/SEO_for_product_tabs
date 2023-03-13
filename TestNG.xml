@@ -2,7 +2,8 @@
     <test name="Test-cases for the add-on 'SEO for product tabs'">
         <classes>
             <class name="PreConditions_Configurations" />
-            <class name="TestCaseOne" />
+            <class name="TestCase1_BeforeProductTabs" />
+            <class name="TestCase2_AfterH1Header" />
         </classes>
     </test>
 </suite>

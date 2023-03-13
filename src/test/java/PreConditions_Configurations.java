@@ -1,7 +1,6 @@
 import adminPanel.CsCartSettings;
 import adminPanel.ProductSettings;
 import adminPanel.SeoTabsSettings;
-import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.$;
@@ -12,8 +11,6 @@ import static com.codeborne.selenide.Selenide.$;
 - Настройки модуля:
     * Добавить навигационную панель вкладок на странице товара -- Да
     * Позиция навигационной панели вкладок -- Перед вкладками товара
-- Настройки темы Юни2:
-    * Верхняя липкая панель -- Да
 - Настраиваем вкладки товара
 - Настраиваем страницу товара с опциями "Wii U DELUXE":
     * шаблон "Большая картинка, плоский"

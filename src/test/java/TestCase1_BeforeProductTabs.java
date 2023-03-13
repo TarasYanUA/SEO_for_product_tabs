@@ -41,10 +41,16 @@ public class TestCase1_BeforeProductTabs extends TestRunner
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
         //Проверяем, что краткое название товара присутствует
-        String expectedText = "ShortName";
-        String actualText = $(".tab-list-title").getText();
-        Assert.assertTrue(actualText.contains(expectedText),
-                "There is no product short name!");
+        String result = null;
+        String expectedWord = "ShortName";
+        String myString = $(".tab-list-title").getText();
+        String[] couple = myString.split(" ");
+        for(int i=0; i < couple.length ; i++) {
+            if(couple[i].equals(expectedWord)){
+                result = couple[i];
+            }
+        }
+        Assert.assertEquals(result, expectedWord, "There is no product short name!");
         Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On, Short name");
 
         //Отключаем верхнюю липкую панель темы

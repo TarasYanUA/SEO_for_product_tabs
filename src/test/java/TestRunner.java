@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 /*
 Модуль "SEO для товарных вкладок" + UniTheme2(UltRu) 4.16.1b.
 Запускать через файл TestNG.xml или каждый тест-кейс по отдельности.
-Скриншоты смотреть в папке: reports -> tests
+Скриншоты смотреть в папке: build -> reports -> tests
  */
 
 public class TestRunner {

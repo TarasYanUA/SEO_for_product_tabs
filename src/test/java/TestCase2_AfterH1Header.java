@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TestCase2_AfterH1Header extends TestRunner{
     @Test
-    public void checkProductPage_TestCaseTwo(){
+    public void checkProductTabs_TestCaseTwo(){
         //Включаем верхнюю липкую панель темы
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAddonsPage();
@@ -29,9 +29,6 @@ public class TestCase2_AfterH1Header extends TestRunner{
         csCartSettings.navigateToAddonsPage();
         SeoTabsSettings seoTabsSettings = csCartSettings.navigateToSeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
-        if(!seoTabsSettings.setting_AddNavigationPanel.isSelected()){
-            seoTabsSettings.setting_AddNavigationPanel.click();
-        }
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("after_h1");
         seoTabsSettings.button_SaveSettings.click();
 
@@ -46,7 +43,7 @@ public class TestCase2_AfterH1Header extends TestRunner{
         //Проверка, что панель товарных вкладок расположена после заголовка Н1
         Assert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
                 "Position of the product tabs panel is not after H1 header!");
-        Selenide.screenshot("200 Product tabs panel - Panel before product tabs, Top sticky panel-On");
+        Selenide.screenshot("200 Product tabs panel - Panel after H1, Top sticky panel-On");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1000);
         //Проверяем, что краткое название товара присутствует
@@ -60,7 +57,7 @@ public class TestCase2_AfterH1Header extends TestRunner{
             }
         }
         Assert.assertEquals(result, expectedWord, "There is no product short name!");
-        Selenide.screenshot("210 Floating panel - Panel before product tabs, Top sticky panel-On, Short name");
+        Selenide.screenshot("210 Floating panel - Panel after H1, Top sticky panel-On, Short name");
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);

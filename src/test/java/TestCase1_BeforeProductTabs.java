@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class TestCase1_BeforeProductTabs extends TestRunner
 {
     @Test
-    public void checkProductPage_TestCaseOne() {
+    public void checkProductTabs_TestCaseOne() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Включаем верхнюю липкую панель темы
         csCartSettings.navigateToAddonsPage();

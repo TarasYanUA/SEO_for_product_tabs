@@ -10,7 +10,6 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class CsCartSettings {
     public CsCartSettings(){super();}
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
-    public SelenideElement popupWindow = $(".ui-dialog-title");
 
     //Страница "Скачанные модули"
     public SelenideElement menuAddons = $("#elm_menu_addons");
@@ -22,12 +21,13 @@ public class CsCartSettings {
 
     public SelenideElement menuProducts = $x("//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']");
     public SelenideElement sectionProducts = $x("//span[text()='Товары']");
-    public SelenideElement gearWheelOnTop = $(".dropdown-icon--tools");
-    public SelenideElement button_Preview = $x("//a[contains(text(), 'Предпросмотр')]");
     public SelenideElement menuSettings = $(".dropdown-toggle.settings");
     public SelenideElement sectionAppearance = $("#elm_menu_settings_Appearance");
     public SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
 
+    //Меню -- Дизайн -- Темы
+    public SelenideElement section_Themes = $("#elm_menu_design_themes");
+    public SelenideElement button_ActivateTheme = $("a[href*='style=Bright_theme']");
     //Меню -- Дизайн -- Вкладки товара
     public SelenideElement menuDesign = $("#elm_menu_design");
     public SelenideElement sectionProductTabs = $(By.id("elm_menu_design_product_tabs"));
@@ -56,6 +56,10 @@ public class CsCartSettings {
     public void navigateToProductTabs(){
         menuDesign.hover();
         sectionProductTabs.click();
+    }
+    public void navigateToDesignThemes(){
+        menuDesign.hover();
+        section_Themes.click();
     }
     public void navigateToAddonsPage(){
         menuAddons.hover();

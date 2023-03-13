@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Method to find a searchable word in a sentence.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,18 +46,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestCase2_AfterH1Header.checkProductPage_TestCaseTwo">
-    <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SEO_for_product_tabs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PreConditions_Configurations" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.TestCase3_Responsive">
     <configuration name="TestCase1_BeforeProductTabs" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -101,13 +93,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCase3_Responsive" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SEO_for_product_tabs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase3_Responsive" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header.checkProductPage_TestCaseTwo" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header" />
         <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
         <item itemvalue="TestNG.TestCase1_BeforeProductTabs.productPage" />
-        <item itemvalue="TestNG.PreConditions_Configurations" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678700268754</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Method to find a searchable word in a sentence.">
+      <created>1678702002046</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678702002046</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

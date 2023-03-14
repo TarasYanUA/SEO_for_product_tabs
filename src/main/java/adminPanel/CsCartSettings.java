@@ -1,11 +1,8 @@
 package adminPanel;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CsCartSettings {
     public CsCartSettings(){super();}
@@ -86,6 +83,6 @@ public class CsCartSettings {
         field_TabHeader.setValue(value);
     }
     public void shiftBrowserTab(int tabNumber){
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+        switchTo().window(tabNumber);
     }
 }

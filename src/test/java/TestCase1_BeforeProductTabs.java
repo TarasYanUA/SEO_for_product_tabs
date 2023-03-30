@@ -32,7 +32,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
         closeCookieNotice();
         selectLanguage_RU();
         productPage.tabPanel.hover();
-        Selenide.sleep(1000);
+        Selenide.sleep(1500);
         //Проверка, что панель товарных вкладок от модуля присутствуют
         Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
         //Проверка, что панель товарных вкладок расположена перед вкладками товара
@@ -40,7 +40,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
                 "Position of the product tabs panel is not before tabs!");
         Selenide.screenshot("100 Product tabs panel - Panel before product tabs, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1000);
+        Selenide.sleep(1500);
         //Проверяем, что краткое название товара присутствует
         String result = null;
         String expectedWord = "ShortName";
@@ -63,7 +63,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
             csCartSettings.button_Save.click(); }
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
-        Selenide.sleep(1000);
+        Selenide.sleep(1500);
         Selenide.screenshot("120 Floating panel - Panel before product tabs, Top sticky panel-Off");
     }
 }

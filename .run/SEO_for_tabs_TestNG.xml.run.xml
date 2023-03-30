@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SEO_for_product_tabs/TestNG.xml" type="TestNG">
+  <configuration default="false" name="SEO_for_tabs/TestNG.xml" type="TestNG">
     <module name="SEO_for_product_tabs" />
     <shortenClasspath name="NONE" />
     <useClassPathOnly />

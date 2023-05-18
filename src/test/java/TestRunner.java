@@ -7,13 +7,13 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 /*
-Модуль "SEO для товарных вкладок" + UniTheme2(UltRu) 4.16.1b.
+Модуль "SEO для товарных вкладок" + UniTheme2(UltRu) 4.16.2a.
 Запускать через файл TestNG.xml или каждый тест-кейс по отдельности.
 Скриншоты смотреть в папке: build -> reports -> tests
  */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4162ultru_video_gallery/admin.php";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4162ultru_seo_product_tabs/admin.php?dispatch=addons.manage";
 
     @BeforeClass
     public void openBrowser() {

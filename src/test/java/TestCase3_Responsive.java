@@ -15,7 +15,8 @@ public class TestCase3_Responsive extends TestRunner{
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToDesignThemes();
         $("#image_img_bright_theme_Bright_theme").hover();
-        csCartSettings.button_ActivateTheme.click();
+        if(csCartSettings.button_ActivateTheme.exists()){
+        csCartSettings.button_ActivateTheme.click();    }
 
         //Включаем настройку модуля - Перед вкладками товара
         csCartSettings.navigateToAddonsPage();

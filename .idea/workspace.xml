@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Some changes to improve.">
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Added softAsserts to all test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestCase3_Responsive">
+  <component name="RunManager" selected="TestNG.PreConditions_Configurations">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -114,9 +112,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PreConditions_Configurations" />
         <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
-        <item itemvalue="TestNG.PreConditions_Configurations" />
         <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header" />
       </list>
@@ -264,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684421599343</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added softAsserts to all test-cases.">
+      <created>1684482997506</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684482997506</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +299,7 @@
     <MESSAGE value="Fixed some locators." />
     <MESSAGE value="Added longer pause." />
     <MESSAGE value="Some changes to improve." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes to improve." />
+    <MESSAGE value="Added softAsserts to all test-cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added softAsserts to all test-cases." />
   </component>
 </project>

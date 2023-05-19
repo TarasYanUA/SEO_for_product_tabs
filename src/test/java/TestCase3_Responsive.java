@@ -8,6 +8,10 @@ import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
+/*
+Проверяем настройки из двух предыдущих тест-кейсов на теме Responsive.
+*/
+
 public class TestCase3_Responsive extends TestRunner{
     @Test
     public void checkProductTabsOnResponsive_TestCaseThree() {

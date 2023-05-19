@@ -3,8 +3,8 @@ import adminPanel.ProductSettings;
 import adminPanel.SeoTabsSettings;
 import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Selenide;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -41,9 +41,10 @@ public class TestCase2_AfterH1Header extends TestRunner{
         productPage.tabPanel.hover();
         Selenide.sleep(1500);
         //Проверка, что панель товарных вкладок от модуля присутствуют
-        Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
         //Проверка, что панель товарных вкладок расположена после заголовка Н1
-        Assert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
+        softAssert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
                 "Position of the product tabs panel is not after H1 header!");
         Selenide.screenshot("200 Product tabs panel - Panel after H1, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
@@ -58,7 +59,7 @@ public class TestCase2_AfterH1Header extends TestRunner{
                 result = couple[i];
             }
         }
-        Assert.assertEquals(result, expectedWord, "There is no product short name!");
+        softAssert.assertEquals(result, expectedWord, "There is no product short name!");
         Selenide.screenshot("210 Floating panel - Panel after H1, Top sticky panel-On");
 
         //Отключаем верхнюю липкую панель темы
@@ -71,6 +72,7 @@ public class TestCase2_AfterH1Header extends TestRunner{
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
         Selenide.sleep(1500);
+        softAssert.assertAll();
         Selenide.screenshot("230 Floating panel - Panel after H1, Top sticky panel-Off");
     }
 }

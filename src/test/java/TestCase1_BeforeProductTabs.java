@@ -2,8 +2,8 @@ import adminPanel.CsCartSettings;
 import adminPanel.ProductSettings;
 import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Selenide;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import storefront.ProductPage;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -34,9 +34,10 @@ public class TestCase1_BeforeProductTabs extends TestRunner
         productPage.tabPanel.hover();
         Selenide.sleep(1500);
         //Проверка, что панель товарных вкладок от модуля присутствуют
-        Assert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
         //Проверка, что панель товарных вкладок расположена перед вкладками товара
-        Assert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
+        softAssert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
                 "Position of the product tabs panel is not before tabs!");
         Selenide.screenshot("100 Product tabs panel - Panel before product tabs, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
@@ -51,7 +52,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
                 result = couple[i];
             }
         }
-        Assert.assertEquals(result, expectedWord, "There is no product short name!");
+        softAssert.assertEquals(result, expectedWord, "There is no product short name!");
         Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On");
 
         //Отключаем верхнюю липкую панель темы
@@ -64,6 +65,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
         Selenide.sleep(1500);
+        softAssert.assertAll();
         Selenide.screenshot("120 Floating panel - Panel before product tabs, Top sticky panel-Off");
     }
 }

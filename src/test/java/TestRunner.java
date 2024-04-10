@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import static com.codeborne.selenide.Selenide.$;
@@ -13,18 +14,20 @@ import static com.codeborne.selenide.Selenide.open;
  */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4171ultrubeta_unitheme2/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4181ultenbeta/admin.php?dispatch=settings.manage&section_id=Appearance";
 
     @BeforeClass
     public void openBrowser() {
         Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true; //делаем скриншоты при падении
-        Configuration.browserSize = "1920x1050"; //Увеличиваем размер экрана
         open(BASIC_URL);
+        WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
-        $(".cm-notification-close").click();
+        if($(".cm-notification-close").exists()) {
+            $(".cm-notification-close").click();
+        }
     }
 
     @AfterClass

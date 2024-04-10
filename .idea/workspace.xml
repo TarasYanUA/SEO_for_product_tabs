@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Added softAsserts to all test-cases.">
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Updated pom file, so test-cases could work.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +29,46 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="CS-Cart4.18.1" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2MgsKGejGHipy5nNsqVZly6DszY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,13 +82,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.SEO_for_tabs/TestNG.xml.executor": "Run",
+    "TestNG.TestCase1_BeforeProductTabs.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Idea Projects/SEO_for_product_tabs/pom.xml",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Idea Projects/Sitemap/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.SEO_for_tabs/TestNG.xml">
+  <component name="RunManager" selected="TestNG.TestCase1_BeforeProductTabs">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -113,13 +164,20 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
         <item itemvalue="TestNG.PreConditions_Configurations" />
         <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
-        <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,6 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678200496242</updated>
+      <workItem from="1712739722505" duration="6500000" />
     </task>
     <task id="LOCAL-00001" summary="Created a structure of classes.">
       <created>1678202290305</created>
@@ -277,8 +336,19 @@
       <option name="project" value="LOCAL" />
       <updated>1684484777229</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Updated pom file, so test-cases could work.">
+      <option name="closed" value="true" />
+      <created>1694007134393</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694007134393</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -308,6 +378,7 @@
     <MESSAGE value="Added longer pause." />
     <MESSAGE value="Some changes to improve." />
     <MESSAGE value="Added softAsserts to all test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added softAsserts to all test-cases." />
+    <MESSAGE value="Updated pom file, so test-cases could work." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom file, so test-cases could work." />
   </component>
 </project>

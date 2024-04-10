@@ -10,8 +10,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class ProductSettings {
     public ProductSettings(){super();}
     public SelenideElement closeNotificationWindowOfCore = $(".cm-notification-close-ajax");
-    public SelenideElement field_productSearch = $("#simple_search input");
-    public SelenideElement button_SearchProduct = $(".advanced-search-field__search");
+    private final SelenideElement field_productSearch = $(".context-search__input");
     public SelenideElement anyProductInSearchList = $(".products-list__image");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_Addons = $("li#addons");
@@ -41,7 +40,6 @@ public class ProductSettings {
     public void goToEditingProductPage(String value){
         field_productSearch.click();
         field_productSearch.setValue(value);
-        button_SearchProduct.click();
         Selenide.sleep(1500);
         anyProductInSearchList.click();
     }

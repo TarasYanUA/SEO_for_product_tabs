@@ -57,7 +57,7 @@ public class PreConditions_Configurations extends TestRunner{
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
         if(productSettings.closeNotificationWindowOfCore.exists()){
             productSettings.closeNotificationWindowOfCore.click(); }
-        productSettings.goToEditingProductPage("Wii U DELUXE");
+        productSettings.goToEditingProductPage("X-Box");
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         productSettings.tab_Addons.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         productSettings.clickAndType_ShortName("ShortName");

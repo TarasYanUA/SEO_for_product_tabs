@@ -27,7 +27,7 @@ public class TestCase1_BeforeProductTabs extends TestRunner
 
         //Переходим на витрину
         ProductSettings productSettings = csCartSettings.navigateToProductListPage();
-        productSettings.goToEditingProductPage("Wii U DELUXE");
+        productSettings.goToEditingProductPage("X-Box");
         ProductPage productPage = productSettings.navigateToProductPage(1);
         closeCookieNotice();
         selectLanguage_RU();

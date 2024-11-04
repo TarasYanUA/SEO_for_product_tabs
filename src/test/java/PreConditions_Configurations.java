@@ -24,15 +24,14 @@ public class PreConditions_Configurations extends TestRunner{
     public void setConfigurations() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
+        csCartSettings.navigateTo_AppearanceSettings();
         if(csCartSettings.setting_DisplayProductDetailsInTabs.isSelected()) {
             csCartSettings.setting_DisplayProductDetailsInTabs.click();
             csCartSettings.button_Save.click();
         }
 
         //Настраиваем настройки модуля
-        csCartSettings.navigateToAddonsPage();
-        SeoTabsSettings seoTabsSettings = csCartSettings.navigateToSeoTabsSettings();
+        SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
         if(!seoTabsSettings.setting_AddNavigationPanel.isSelected()){
             seoTabsSettings.setting_AddNavigationPanel.click();
@@ -41,7 +40,7 @@ public class PreConditions_Configurations extends TestRunner{
         seoTabsSettings.button_SaveSettings.click();
 
         //Настраиваем вкладки товара
-        csCartSettings.navigateToProductTabs();
+        csCartSettings.navigateTo_ProductTabs();
         csCartSettings.tabName_Description.click();
         setProductTab("Описание (Показывать содержимое вкладки)", "Описание [product]");
         csCartSettings.tabName_Features.click();
@@ -54,7 +53,7 @@ public class PreConditions_Configurations extends TestRunner{
         setProductTab("Обязательные товары", "[tab_name]");
 
         //Настраиваем товар
-        ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         if(productSettings.closeNotificationWindowOfCore.exists()){
             productSettings.closeNotificationWindowOfCore.click(); }
         productSettings.goToEditingProductPage("X-Box");

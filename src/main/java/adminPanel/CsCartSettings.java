@@ -1,35 +1,36 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 
-public class CsCartSettings {
+public class CsCartSettings implements CheckMenuToBeActive {
     public CsCartSettings(){super();}
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
 
-    //Страница "Скачанные модули"
-    private final SelenideElement menuAddons = $("a[href=\"#primary_main_menu_1_8_body\"]");
-    private final SelenideElement sectionDownloadedAddons = $(By.id("addons_downloaded_add_ons"));
-    private final SelenideElement menu_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
-    private final SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
-    public SelenideElement menu_UniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
-    public SelenideElement section_ThemeSettings = $("div.nowrap a[href$='abt__ut2.settings']");
+    public void shiftBrowserTab(int tabNumber){
+        switchTo().window(tabNumber);
+    }
 
-    private final SelenideElement menuProducts = $("a[href='#primary_main_menu_1_4_body']");
-    private final SelenideElement sectionProducts = $(By.id("products_products"));
-    private final SelenideElement menuSettings = $(By.id("administration"));
-    private final SelenideElement menu_General = $("a[href$='section_id=General']");
-    private final SelenideElement sectionAppearance = $("a[href$='section_id=Appearance']");
-    public SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
+    //Меню "Товары"
+    private final SelenideElement menu_Products = $("a[href='#primary_main_menu_1_4_body']");
+    private final SelenideElement section_Products = $(By.id("products_products"));
 
-    //Веб-сайт -- Темы
+
+    public ProductSettings navigateTo_ProductListPage(){
+        checkMenuToBeActive("dispatch=products.manage", menu_Products);
+        section_Products.click();
+        return new ProductSettings();
+    }
+
+
+    //Меню "Веб-сайт -- Темы"
     private final SelenideElement menu_Website = $("a[href=\"#primary_main_menu_1_7_body\"]");
     private final SelenideElement section_Themes = $(By.id("website_themes"));
     public SelenideElement button_ActivateTheme = $("a[href*='style=Bright_theme']");
 
-    //Веб-сайт -- Вкладки товара
+    //Меню "Веб-сайт -- Темы -- Вкладки товара"
+    SelenideElement section_ProductTabs = $("a[href$='dispatch=tabs.manage']");
     public SelenideElement tabName_Description = $(".cm-sortable-id-1 a");
     public SelenideElement tabName_Features = $(".cm-sortable-id-2 a");
     public SelenideElement tabName_Tags = $(".cm-sortable-id-4 a");
@@ -43,52 +44,68 @@ public class CsCartSettings {
     public SelenideElement button_SaveTab = $(".buttons-container-picker input.btn.btn-primary");
 
 
-    public ProductSettings navigateToProductListPage(){
-        menuProducts.scrollIntoView(true).click();
-        sectionProducts.click();
-        return new ProductSettings();
-    }
-    public void navigateToAppearanceSettings(){
-        menuSettings.click();
-        menu_General.click();
-        sectionAppearance.click();
-    }
-    public void navigateToProductTabs(){
-        String url = WebDriverRunner.getWebDriver().getCurrentUrl();
-        String[] split = url.split("\\?");
-        String mainUrl = split[0]; //получили ссылку
-        String sectionProductTabs = mainUrl + "?dispatch=tabs.manage";
-        open(sectionProductTabs);
-    }
-    public void navigateToDesignThemes(){
-        menu_Website.click();
+    public void navigateTo_WebsiteThemes(){
+        checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         section_Themes.click();
     }
-    public void navigateToAddonsPage(){
-        menuAddons.scrollIntoView(true).click();
-        sectionDownloadedAddons.click();
+
+    public void navigateTo_ProductTabs(){
+        navigateTo_WebsiteThemes();
+        section_ProductTabs.click();
     }
-    public SeoTabsSettings navigateToSeoTabsSettings(){
-        menu_SeoTabsAddon.click();
-        section_SeoTabsSettings.click();
-        return new SeoTabsSettings();
-    }
-    public UniThemeSettings navigateToThemeSettings(){
-        menu_UniTheme.click();
-        section_ThemeSettings.click();
-        return new UniThemeSettings();
-    }
+
     public void clickAndType_TabName(String value){
         field_Name.click();
         field_Name.clear();
         field_Name.setValue(value);
     }
+
     public void clickAndType_TabHeader(String value){
         field_TabHeader.click();
         field_TabHeader.clear();
         field_TabHeader.setValue(value);
     }
-    public void shiftBrowserTab(int tabNumber){
-        switchTo().window(tabNumber);
+
+
+    //Меню "Модули -- Скачанные модули"
+    private final SelenideElement menu_Addons = $("a[href=\"#primary_main_menu_1_8_body\"]");
+    private final SelenideElement section_DownloadedAddons = $(By.id("addons_downloaded_add_ons"));
+    private final SelenideElement gearwheelOfAddon_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
+    private final SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
+    public SelenideElement gearwheelOfAddon_UniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
+    public SelenideElement section_ThemeSettings = $("div.nowrap a[href$='abt__ut2.settings']");
+
+
+    private void navigateTo_DownloadedAddonsPage(){
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
+        section_DownloadedAddons.click();
+    }
+
+    public SeoTabsSettings navigateTo_SeoTabsSettings(){
+        navigateTo_DownloadedAddonsPage();
+        gearwheelOfAddon_SeoTabsAddon.click();
+        section_SeoTabsSettings.click();
+        return new SeoTabsSettings();
+    }
+
+    public UniThemeSettings navigateToThemeSettings(){
+        navigateTo_DownloadedAddonsPage();
+        gearwheelOfAddon_UniTheme.click();
+        section_ThemeSettings.click();
+        return new UniThemeSettings();
+    }
+
+
+    //Меню "Настройки -- Общие настройки -- Внешний вид"
+    private final SelenideElement menu_Settings = $(By.id("administration"));
+    private final SelenideElement menu_General = $("a[href$='section_id=General']");
+    private final SelenideElement section_Appearance = $("a[href$='section_id=Appearance']");
+    public SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
+
+
+    public void navigateTo_AppearanceSettings(){
+        menu_Settings.click();
+        menu_General.click();
+        section_Appearance.click();
     }
 }

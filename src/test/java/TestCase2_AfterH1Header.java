@@ -19,21 +19,19 @@ public class TestCase2_AfterH1Header extends TestRunner{
     public void checkProductTabs_TestCaseTwo(){
         //Включаем верхнюю липкую панель темы
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
         if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
             uniThemeSettings.setting_TopStickyPanel.click();
             csCartSettings.button_Save.click(); }
 
         //Настраиваем настройки модуля
-        csCartSettings.navigateToAddonsPage();
-        SeoTabsSettings seoTabsSettings = csCartSettings.navigateToSeoTabsSettings();
+        SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("after_h1");
         seoTabsSettings.button_SaveSettings.click();
 
         //Переходим на витрину
-        ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         productSettings.goToEditingProductPage("X-Box");
         ProductPage productPage = productSettings.navigateToProductPage(1);
         closeCookieNotice();
@@ -64,7 +62,6 @@ public class TestCase2_AfterH1Header extends TestRunner{
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.navigateToAddonsPage();
         csCartSettings.navigateToThemeSettings();
         if(uniThemeSettings.setting_TopStickyPanel.isSelected()){
             uniThemeSettings.setting_TopStickyPanel.click();

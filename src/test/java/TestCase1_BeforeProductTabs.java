@@ -19,14 +19,13 @@ public class TestCase1_BeforeProductTabs extends TestRunner
     public void checkProductTabs_TestCaseOne() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Включаем верхнюю липкую панель темы
-        csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
         if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
             uniThemeSettings.setting_TopStickyPanel.click();
             csCartSettings.button_Save.click(); }
 
         //Переходим на витрину
-        ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         productSettings.goToEditingProductPage("X-Box");
         ProductPage productPage = productSettings.navigateToProductPage(1);
         closeCookieNotice();
@@ -57,7 +56,6 @@ public class TestCase1_BeforeProductTabs extends TestRunner
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.navigateToAddonsPage();
         csCartSettings.navigateToThemeSettings();
         if(uniThemeSettings.setting_TopStickyPanel.isSelected()){
             uniThemeSettings.setting_TopStickyPanel.click();

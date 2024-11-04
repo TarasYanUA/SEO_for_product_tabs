@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Updated pom file, so test-cases could work.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,7 +56,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="CS-Cart4.18.1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +83,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.SEO_for_tabs/TestNG.xml.executor": "Run",
     "TestNG.TestCase1_BeforeProductTabs.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "CS-Cart4.18.2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Idea Projects/Sitemap/pom.xml",
@@ -355,7 +354,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/CS-Cart4.18.1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -33,7 +33,6 @@ public class ProductSettings {
     }
     public void clickAndType_TagName (String value){
         field_TagName.click();
-        //Selenide.sleep(1500);
         field_TagName.setValue(value);
         field_TagName.sendKeys(Keys.ENTER);
     }

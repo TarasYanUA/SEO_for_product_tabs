@@ -17,21 +17,20 @@ public class TestCase3_Responsive extends TestRunner{
     public void checkProductTabsOnResponsive_TestCaseThree() {
         //Активируем тему "Responsive"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToDesignThemes();
+        csCartSettings.navigateTo_WebsiteThemes();
         $("#image_img_bright_theme_Bright_theme").hover();
         if (csCartSettings.button_ActivateTheme.exists()) {
             csCartSettings.button_ActivateTheme.click();
         }
 
         //Включаем настройку модуля - Перед вкладками товара
-        csCartSettings.navigateToAddonsPage();
-        SeoTabsSettings seoTabsSettings = csCartSettings.navigateToSeoTabsSettings();
+        SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("before_tabs");
         seoTabsSettings.button_SaveSettings.click();
 
         //Переходим на витрину
-        ProductSettings productSettings = csCartSettings.navigateToProductListPage();
+        ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         productSettings.goToEditingProductPage("X-Box");
         ProductPage productPage = productSettings.navigateToProductPage(1);
         closeCookieNotice();
@@ -62,8 +61,7 @@ public class TestCase3_Responsive extends TestRunner{
 
         //Включаем настройку модуля - После заголовка Н1
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.navigateToSeoTabsSettings();
+        csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("after_h1");
         seoTabsSettings.button_SaveSettings.click();

@@ -38,15 +38,20 @@ public class TestCase2_AfterH1Header extends TestRunner{
         selectLanguage_RU();
         productPage.tabPanel.hover();
         Selenide.sleep(1500);
-        //Проверка, что панель товарных вкладок от модуля присутствуют
+
         SoftAssert softAssert = new SoftAssert();
+
+        //Проверяем, что панель товарных вкладок от модуля присутствуют
         softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
-        //Проверка, что панель товарных вкладок расположена после заголовка Н1
+
+        //Проверяем, что панель товарных вкладок расположена после заголовка Н1
         softAssert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
                 "Position of the product tabs panel is not after H1 header!");
+
         Selenide.screenshot("200 Product tabs panel - Panel after H1, UniTheme2");
         productPage.tab_Tags.scrollIntoView(true);
         Selenide.sleep(1500);
+
         //Проверяем, что краткое название товара присутствует
         String result = null;
         String expectedWord = "ShortName";
@@ -69,7 +74,9 @@ public class TestCase2_AfterH1Header extends TestRunner{
         csCartSettings.shiftBrowserTab(1);
         Selenide.refresh();
         Selenide.sleep(1500);
-        softAssert.assertAll();
+
         Selenide.screenshot("230 Floating panel - Panel after H1, Top sticky panel-Off");
+        softAssert.assertAll();
+        System.out.println("TestCase2_AfterH1Header has passed successfully!");
     }
 }

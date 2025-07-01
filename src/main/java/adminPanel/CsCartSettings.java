@@ -13,7 +13,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     }
 
     //Меню "Товары"
-    private final SelenideElement menu_Products = $("a[href='#primary_main_menu_1_4_body']");
+    private final SelenideElement menu_Products = $("a[href='#primary_main_menu_1_3_body']");
     private final SelenideElement section_Products = $(By.id("products_products"));
 
 
@@ -25,7 +25,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
 
 
     //Меню "Веб-сайт -- Темы"
-    private final SelenideElement menu_Website = $("a[href=\"#primary_main_menu_1_7_body\"]");
+    private final SelenideElement menu_Website = $("a[href='#primary_main_menu_1_6_body']");
     private final SelenideElement section_Themes = $(By.id("website_themes"));
     public SelenideElement button_ActivateTheme = $("a[href*='style=Bright_theme']");
 

@@ -68,7 +68,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
 
 
     //Меню "Модули -- Скачанные модули"
-    private final SelenideElement menu_Addons = $("a[href=\"#primary_main_menu_1_8_body\"]");
+    private final SelenideElement menu_Addons = $("a[href=\"#primary_main_menu_1_7_body\"]");
     private final SelenideElement section_DownloadedAddons = $(By.id("addons_downloaded_add_ons"));
     private final SelenideElement gearwheelOfAddon_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
     private final SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");

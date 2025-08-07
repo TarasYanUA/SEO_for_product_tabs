@@ -1,8 +1,9 @@
 import adminPanel.CsCartSettings;
 import adminPanel.ProductSettings;
 import adminPanel.SeoTabsSettings;
-import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
+import utils.Utils;
+
 import static com.codeborne.selenide.Selenide.$;
 
 /*
@@ -19,23 +20,18 @@ import static com.codeborne.selenide.Selenide.$;
     * добавляем обязательный товар
 */
 
-public class PreConditions_Configurations extends TestRunner{
+public class PreConditions_Configurations extends TestRunner {
     @Test
     public void setConfigurations() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateTo_AppearanceSettings();
-        if(csCartSettings.setting_DisplayProductDetailsInTabs.isSelected()) {
-            csCartSettings.setting_DisplayProductDetailsInTabs.click();
-            csCartSettings.button_Save.click();
-        }
+        csCartSettings.disableSetting_DisplayProductDetailsInTabs();
 
         //Настраиваем настройки модуля
         SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
-        if(!seoTabsSettings.setting_AddNavigationPanel.isSelected()){
-            seoTabsSettings.setting_AddNavigationPanel.click();
-        }
+        Utils.setCheckbox(seoTabsSettings.setting_AddNavigationPanel, true);
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("before_tabs");
         seoTabsSettings.button_SaveSettings.click();
 
@@ -54,34 +50,32 @@ public class PreConditions_Configurations extends TestRunner{
 
         //Настраиваем товар
         ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
-        if(productSettings.closeNotificationWindowOfCore.exists()){
-            productSettings.closeNotificationWindowOfCore.click(); }
+        if (productSettings.closeNotificationWindowOfCore.exists())
+            productSettings.closeNotificationWindowOfCore.click();
         productSettings.goToEditingProductPage("X-Box");
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         productSettings.tab_Addons.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        productSettings.clickAndType_ShortName("ShortName");
-        productSettings.tab_Tags.click();
+        productSettings.field_ShortName.setValue("ShortName");
+        productSettings.tab_Tags.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         productSettings.clickAndType_TagName("Sport");
-        productSettings.tab_RequiredProducts.click();
-        if(!$(".cm-object-picker-object.object-picker__selection-extended").exists()){
+        productSettings.tab_RequiredProducts.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if (!$(".cm-object-picker-object.object-picker__selection-extended").exists()) {
             productSettings.button_Picker.click();
-            $(".ui-dialog-title").shouldBe(Condition.enabled);
+            Utils.waitForDialogWindowToAppear();
             productSettings.pickAProduct.click();
             productSettings.button_AddProductsAndClose.click();
         }
-        csCartSettings.button_Save.click();
+        CsCartSettings.button_Save.click();
     }
 
-    public void setProductTab (String name, String header){
+    public void setProductTab(String name, String header) {
         CsCartSettings csCartSettings = new CsCartSettings();
-        $(".ui-dialog-title").shouldBe(Condition.enabled);
-        csCartSettings.clickAndType_TabName(name);
+        Utils.waitForDialogWindowToAppear();
+        csCartSettings.field_Name.setValue(name);
         csCartSettings.tab_SeoForProductTabs.click();
-        if(!csCartSettings.setting_ShowTabOnFloatingPanel.isSelected()){
-        csCartSettings.setting_ShowTabOnFloatingPanel.click(); }
-        if(!csCartSettings.setting_ActivateSettings.isSelected()){
-        csCartSettings.setting_ActivateSettings.click(); }
-        csCartSettings.clickAndType_TabHeader(header);
+        Utils.setCheckbox(csCartSettings.setting_ShowTabOnFloatingPanel, true);
+        Utils.setCheckbox(csCartSettings.setting_ActivateSettings, true);
+        csCartSettings.field_TabHeader.setValue(header);
         csCartSettings.button_SaveTab.click();
     }
 }

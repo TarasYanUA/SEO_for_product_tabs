@@ -1,11 +1,12 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import org.testng.asserts.SoftAssert;
+import storefront.CollectAssertMessages;
+
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "SEO для товарных вкладок" + UniTheme2(UltRu) 4.16.2a.
@@ -14,32 +15,37 @@ import static com.codeborne.selenide.Selenide.open;
  */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://abd-5322bebfdb.demos.abt.team/admin.php?dispatch=themes.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4184ultru/admin.php?dispatch=addons.manage";
+    private SoftAssert softAssert;
 
     @BeforeClass
     public void openBrowser() {
         Configuration.browser = "chrome";
         Configuration.screenshots = true; //делаем скриншоты при падении
+        Configuration.savePageSource = false; //не создавать html файлы при создании скриншотов
         open(BASIC_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
+
+        softAssert = new SoftAssert();
+        CollectAssertMessages.setSoftAssertions(softAssert);
+
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
-        if($(".cm-notification-close").exists()) {
+        if ($(".cm-notification-close").exists())
             $(".cm-notification-close").click();
-        }
     }
 
     @AfterClass
     public void closeBrowser() {
-        Selenide.closeWebDriver();
-    }
+        softAssert = CollectAssertMessages.getSoftAssertions();
+        try {
+            softAssert.assertAll();
+        } catch (AssertionError e) {
+            System.out.println("\nОшибки в asserts:");
+            System.out.println(e.getMessage());
+        }
 
-    public void selectLanguage_RU() {
-        $("a[id*='_wrap_language_']").hover().click();
-        $(".ty-select-block__list-item a[data-ca-name='ru']").click();
-    }
-    public void closeCookieNotice(){
-        $(".cookie-notice").shouldBe(Condition.interactable);
-        $(".cm-btn-success").click();
+        sleep(2000);
+        Selenide.closeWebDriver();
     }
 }

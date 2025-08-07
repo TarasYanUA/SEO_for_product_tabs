@@ -3,25 +3,23 @@ import adminPanel.ProductSettings;
 import adminPanel.SeoTabsSettings;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+import storefront.AssertsPage;
 import storefront.ProductPage;
-import static com.codeborne.selenide.Selenide.$;
+import utils.Utils;
+
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 /*
 Проверяем настройки из двух предыдущих тест-кейсов на теме Responsive.
 */
 
-public class TestCase3_Responsive extends TestRunner{
+public class TestCase3_Responsive extends TestRunner {
     @Test
     public void checkProductTabsOnResponsive_TestCaseThree() {
         //Активируем тему "Responsive"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateTo_WebsiteThemes();
-        $("#image_img_bright_theme_Bright_theme").hover();
-        if (csCartSettings.button_ActivateTheme.exists()) {
-            csCartSettings.button_ActivateTheme.click();
-        }
+        csCartSettings.activateTheme();
 
         //Включаем настройку модуля - Перед вкладками товара
         SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
@@ -32,36 +30,24 @@ public class TestCase3_Responsive extends TestRunner{
         //Переходим на витрину
         ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         productSettings.goToEditingProductPage("X-Box");
-        ProductPage productPage = productSettings.navigateToProductPage(1);
-        closeCookieNotice();
-        selectLanguage_RU();
-        productPage.tabPanel.hover();
-        Selenide.sleep(1500);
+        ProductPage productPage = productSettings.navigateTo_ProductPage(1);
+        Utils.closeCookieNoticeIfExists();
+        Utils.selectLanguage_RU();
 
-        SoftAssert softAssert = new SoftAssert();
+        AssertsPage assertsPage = new AssertsPage();
 
         //Проверяем, что панель товарных вкладок от модуля присутствуют
-        softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
+        productPage.scrollToTab(productPage.tab_Panel);
+        assertsPage.assertElementExists(assertsPage.productTabsPanel);
 
         //Проверяем, что панель товарных вкладок расположена перед вкладками товара
-        softAssert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
-                "Position of the product tabs panel is not before tabs!");
+        assertsPage.assertElementExists(assertsPage.productTabsPosition_BeforeProductTabs);
 
         Selenide.screenshot("300 Product tabs panel - Panel before product tabs, Responsive");
-        productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1500);
 
         //Проверяем, что краткое название товара присутствует
-        String result = null;
-        String expectedWord = "ShortName";
-        String myString = $(".tab-list-title").getText();
-        String[] couple = myString.split(" ");
-        for (int i = 0; i < couple.length; i++) {
-            if (couple[i].equals(expectedWord)) {
-                result = couple[i];
-            }
-        }
-        softAssert.assertEquals(result, expectedWord, "There is no product short name!");
+        productPage.scrollToTab(productPage.tab_Tags);
+        assertsPage.assertShortNameExists();
         Selenide.screenshot("310 Floating panel - Panel before product tabs, Responsive");
 
         //Включаем настройку модуля - После заголовка Н1
@@ -72,34 +58,22 @@ public class TestCase3_Responsive extends TestRunner{
         seoTabsSettings.button_SaveSettings.click();
 
         csCartSettings.shiftBrowserTab(1);
-        Selenide.refresh();
-        executeJavaScript("window.scrollTo(0, -document.body.scrollHeight);");
+        Utils.refreshPage();
+        executeJavaScript("window.scrollTo(0, 0);");
 
         //Проверяем, что панель товарных вкладок от модуля присутствуют
-        softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
+        assertsPage.assertElementExists(assertsPage.productTabsPanel);
 
         //Проверяем, что панель товарных вкладок расположена после заголовка Н1
-        softAssert.assertTrue($(".ab-spt-floating-position-after_h1").exists(),
-                "Position of the product tabs panel is not after H1 header!");
+        assertsPage.assertElementExists(assertsPage.productTabsPosition_AfterH1);
 
         Selenide.screenshot("320 Product tabs panel - Panel after H1, Responsive");
-        productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1500);
 
         //Проверяем, что краткое название товара присутствует
-        String resultTwo = null;
-        String expectedWordTwo = "ShortName";
-        String myStringTwo = $(".tab-list-title").getText();
-        String[] coupleTwo = myStringTwo.split(" ");
-        for (int i = 0; i < coupleTwo.length; i++) {
-            if (coupleTwo[i].equals(expectedWordTwo)) {
-                resultTwo = coupleTwo[i];
-            }
-        }
-        softAssert.assertEquals(resultTwo, expectedWordTwo, "There is no product short name!");
+        productPage.scrollToTab(productPage.tab_Tags);
+        assertsPage.assertShortNameExists();
 
         Selenide.screenshot("330 Floating panel - Panel after H1, Responsive");
-        softAssert.assertAll();
         System.out.println("TestCase3_Responsive has passed successfully!");
     }
 }

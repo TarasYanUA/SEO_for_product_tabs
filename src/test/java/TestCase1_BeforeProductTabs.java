@@ -3,9 +3,9 @@ import adminPanel.ProductSettings;
 import adminPanel.UniThemeSettings;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+import storefront.AssertsPage;
 import storefront.ProductPage;
-import static com.codeborne.selenide.Selenide.$;
+import utils.Utils;
 
 /*
 - Настройки темы Юни2:
@@ -13,64 +13,45 @@ import static com.codeborne.selenide.Selenide.$;
 - Позиция навигационной панели вкладок -- Перед вкладками товара
 */
 
-public class TestCase1_BeforeProductTabs extends TestRunner
-{
+public class TestCase1_BeforeProductTabs extends TestRunner {
     @Test
     public void checkProductTabs_TestCaseOne() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Включаем верхнюю липкую панель темы
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToThemeSettings();
-        if(!uniThemeSettings.setting_TopStickyPanel.isSelected()){
-            uniThemeSettings.setting_TopStickyPanel.click();
-            csCartSettings.button_Save.click(); }
+        UniThemeSettings uniThemeSettings = csCartSettings.navigateTo_ThemeSettings();
+        Utils.setCheckboxAndSave(uniThemeSettings.setting_TopStickyPanel, true);
 
         //Переходим на витрину
         ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
         productSettings.goToEditingProductPage("X-Box");
-        ProductPage productPage = productSettings.navigateToProductPage(1);
-        closeCookieNotice();
-        selectLanguage_RU();
-        productPage.tabPanel.hover();
-        Selenide.sleep(1500);
+        ProductPage productPage = productSettings.navigateTo_ProductPage(1);
+        Utils.closeCookieNoticeIfExists();
+        Utils.selectLanguage_RU();
 
-        SoftAssert softAssert = new SoftAssert();
+        AssertsPage assertsPage = new AssertsPage();
 
         //Проверяем, что панель товарных вкладок от модуля присутствуют
-        softAssert.assertTrue($(".ab-spt-floating-panel").exists(), "There is no product tabs panel!");
+        productPage.scrollToTab(productPage.tab_Panel);
+        assertsPage.assertElementExists(assertsPage.productTabsPanel);
 
         //Проверяем, что панель товарных вкладок расположена перед вкладками товара
-        softAssert.assertTrue($(".ab-spt-floating-position-before_tabs").exists(),
-                "Position of the product tabs panel is not before tabs!");
+        assertsPage.assertElementExists(assertsPage.productTabsPosition_BeforeProductTabs);
 
         Selenide.screenshot("100 Product tabs panel - Panel before product tabs, UniTheme2");
-        productPage.tab_Tags.scrollIntoView(true);
-        Selenide.sleep(1500);
 
         //Проверяем, что краткое название товара присутствует
-        String result = null;
-        String expectedWord = "ShortName";
-        String myString = $(".tab-list-title").getText();
-        String[] couple = myString.split(" ");
-        for(int i=0; i < couple.length ; i++) {
-            if(couple[i].equals(expectedWord)){
-                result = couple[i];
-            }
-        }
-        softAssert.assertEquals(result, expectedWord, "There is no product short name!");
+        productPage.scrollToTab(productPage.tab_Tags);
+        assertsPage.assertShortNameExists();
         Selenide.screenshot("110 Floating panel - Panel before product tabs, Top sticky panel-On");
 
         //Отключаем верхнюю липкую панель темы
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.navigateToThemeSettings();
-        if(uniThemeSettings.setting_TopStickyPanel.isSelected()){
-            uniThemeSettings.setting_TopStickyPanel.click();
-            csCartSettings.button_Save.click(); }
+        csCartSettings.navigateTo_ThemeSettings();
+        Utils.setCheckboxAndSave(uniThemeSettings.setting_TopStickyPanel, false);
         csCartSettings.shiftBrowserTab(1);
-        Selenide.refresh();
-        Selenide.sleep(1500);
+        Utils.refreshPage();
 
         Selenide.screenshot("120 Floating panel - Panel before product tabs, Top sticky panel-Off");
-        softAssert.assertAll();
         System.out.println("TestCase1_BeforeProductTabs has passed successfully!");
     }
 }

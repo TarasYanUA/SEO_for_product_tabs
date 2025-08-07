@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Little adaptation to the newest CS-Cart version.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/CollectAssertMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,6 +56,7 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="CS-Cart4.18.1" />
+                <branch-info repo="$PROJECT_DIR$" source="CS-Cart4.18.4b" />
               </list>
             </value>
           </entry>
@@ -51,7 +65,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CS-Cart4.18.1" />
+        <entry key="$PROJECT_DIR$" value="CS-Cart4.18.2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +79,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/TarasYanUA/SEO_for_product_tabs.git&quot;,
-    &quot;accountId&quot;: &quot;51eb8828-6df6-4bb4-96b1-341c135a258d&quot;
+    &quot;accountId&quot;: &quot;9adb2400-f4f1-4d9c-9226-41908cfe1cec&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -95,7 +109,7 @@
     &quot;TestNG.TestCase2_AfterH1Header.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase3_Responsive.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestNG/SEO_for_tabs.xml.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CS-Cart4.18.2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CS-Cart4.18.4b&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/SEO_for_product_tabs/pom.xml&quot;,
@@ -111,7 +125,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestNG/SEO_for_tabs.xml">
+  <component name="RunManager" selected="TestNG.TestCase3_Responsive">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -178,13 +192,21 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.PreConditions_Configurations" />
         <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
-        <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header" />
         <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,6 +217,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678200496242</updated>
       <workItem from="1712739722505" duration="6500000" />
+      <workItem from="1754482751268" duration="5546000" />
+      <workItem from="1754555454917" duration="8873000" />
     </task>
     <task id="LOCAL-00001" summary="Created a structure of classes.">
       <created>1678202290305</created>

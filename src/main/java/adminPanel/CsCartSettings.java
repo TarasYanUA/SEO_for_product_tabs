@@ -110,7 +110,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     }
 
     public void disableSetting_DisplayProductDetailsInTabs() {
-        Utils.setCheckbox(setting_DisplayProductDetailsInTabs, false);
+        Utils.setCheckboxState(setting_DisplayProductDetailsInTabs, false);
         button_Save.click();
     }
 }

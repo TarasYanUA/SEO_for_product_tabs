@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Utils {
 
-    public static void setCheckbox(SelenideElement checkbox, boolean shouldBeChecked) {
+    public static void setCheckboxState(SelenideElement checkbox, boolean shouldBeChecked) {
         if (checkbox.isSelected() != shouldBeChecked) {
             checkbox.scrollIntoCenter().click();
         }

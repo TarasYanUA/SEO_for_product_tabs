@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Little adaptation to the newest CS-Cart version.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/CollectAssertMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SeoTabsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase1_BeforeProductTabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase2_AfterH1Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,35 +87,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.PreConditions_Configurations.executor&quot;: &quot;Debug&quot;,
-    &quot;TestNG.SEO_for_tabs/TestNG.xml.executor&quot;: &quot;Debug&quot;,
-    &quot;TestNG.TestCase1_BeforeProductTabs.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCase2_AfterH1Header.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCase3_Responsive.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestNG/SEO_for_tabs.xml.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CS-Cart4.18.4b&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/SEO_for_product_tabs/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.PreConditions_Configurations.executor": "Run",
+    "TestNG.SEO_for_tabs/TestNG.xml.executor": "Debug",
+    "TestNG.TestCase1_BeforeProductTabs.executor": "Run",
+    "TestNG.TestCase2_AfterH1Header.executor": "Run",
+    "TestNG.TestCase3_Responsive.executor": "Run",
+    "TestNG.TestNG/SEO_for_tabs.xml.executor": "Run",
+    "git-widget-placeholder": "CS-Cart4.18.4b",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/SEO_for_product_tabs/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.TestCase3_Responsive">
+}]]></component>
+  <component name="RunManager" selected="TestNG.TestCase1_BeforeProductTabs">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -184,17 +174,17 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.TestNG/SEO_for_tabs.xml" />
-      <item itemvalue="TestNG.TestCase3_Responsive" />
-      <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
       <item itemvalue="TestNG.PreConditions_Configurations" />
       <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
       <item itemvalue="TestNG.TestCase2_AfterH1Header" />
+      <item itemvalue="TestNG.TestCase3_Responsive" />
+      <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCase3_Responsive" />
-        <item itemvalue="TestNG.PreConditions_Configurations" />
         <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
+        <item itemvalue="TestNG.PreConditions_Configurations" />
+        <item itemvalue="TestNG.TestCase3_Responsive" />
         <item itemvalue="TestNG.TestCase2_AfterH1Header" />
         <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
       </list>
@@ -203,8 +193,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -218,7 +207,8 @@
       <updated>1678200496242</updated>
       <workItem from="1712739722505" duration="6500000" />
       <workItem from="1754482751268" duration="5546000" />
-      <workItem from="1754555454917" duration="8873000" />
+      <workItem from="1754555454917" duration="9441000" />
+      <workItem from="1755248063388" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Created a structure of classes.">
       <created>1678202290305</created>
@@ -415,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751376970213</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!">
+      <option name="closed" value="true" />
+      <created>1754571698209</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1754571698209</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,6 +465,7 @@
     <MESSAGE value="Transferred to Java24" />
     <MESSAGE value="Updated pom file" />
     <MESSAGE value="Little adaptation to the newest CS-Cart version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Little adaptation to the newest CS-Cart version." />
+    <MESSAGE value="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!" />
   </component>
 </project>

@@ -31,7 +31,7 @@ public class PreConditions_Configurations extends TestRunner {
         //Настраиваем настройки модуля
         SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();
         seoTabsSettings.tab_Settings.click();
-        Utils.setCheckbox(seoTabsSettings.setting_AddNavigationPanel, true);
+        Utils.setCheckboxState(seoTabsSettings.setting_AddNavigationPanel, true);
         seoTabsSettings.setting_PositionOfNavigationPanel.selectOptionByValue("before_tabs");
         seoTabsSettings.button_SaveSettings.click();
 
@@ -54,11 +54,11 @@ public class PreConditions_Configurations extends TestRunner {
             productSettings.closeNotificationWindowOfCore.click();
         productSettings.goToEditingProductPage("X-Box");
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        productSettings.tab_Addons.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.tab_Addons.scrollIntoCenter().click();
         productSettings.field_ShortName.setValue("ShortName");
-        productSettings.tab_Tags.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.tab_Tags.scrollIntoCenter().click();
         productSettings.clickAndType_TagName("Sport");
-        productSettings.tab_RequiredProducts.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        productSettings.tab_RequiredProducts.scrollIntoCenter().click();
         if (!$(".cm-object-picker-object.object-picker__selection-extended").exists()) {
             productSettings.button_Picker.click();
             Utils.waitForDialogWindowToAppear();
@@ -73,8 +73,8 @@ public class PreConditions_Configurations extends TestRunner {
         Utils.waitForDialogWindowToAppear();
         csCartSettings.field_Name.setValue(name);
         csCartSettings.tab_SeoForProductTabs.click();
-        Utils.setCheckbox(csCartSettings.setting_ShowTabOnFloatingPanel, true);
-        Utils.setCheckbox(csCartSettings.setting_ActivateSettings, true);
+        Utils.setCheckboxState(csCartSettings.setting_ShowTabOnFloatingPanel, true);
+        Utils.setCheckboxState(csCartSettings.setting_ActivateSettings, true);
         csCartSettings.field_TabHeader.setValue(header);
         csCartSettings.button_SaveTab.click();
     }

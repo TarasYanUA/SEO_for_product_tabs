@@ -11,7 +11,7 @@ public class AssertsPage {
         super();
     }
 
-    SoftAssert softAssert = new SoftAssert();
+    SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
     public String productTabsPanel = ".ab-spt-floating-panel";
     public String productTabsPosition_BeforeProductTabs = ".ab-spt-floating-position-before_tabs";

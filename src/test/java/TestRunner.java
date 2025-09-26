@@ -21,9 +21,9 @@ public class TestRunner {
     @BeforeClass
     public void openBrowser() {
         Configuration.browser = "chrome";
+        open(BASIC_URL);
         Configuration.screenshots = true; //делаем скриншоты при падении
         Configuration.savePageSource = false; //не создавать html файлы при создании скриншотов
-        open(BASIC_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
 
         softAssert = new SoftAssert();

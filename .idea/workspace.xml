@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
-    </list>
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Fixed Critical bug with collecting asserts!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +68,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -87,34 +83,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.PreConditions_Configurations.executor": "Run",
-    "TestNG.SEO_for_tabs/TestNG.xml.executor": "Debug",
-    "TestNG.TestCase1_BeforeProductTabs.executor": "Run",
-    "TestNG.TestCase2_AfterH1Header.executor": "Run",
-    "TestNG.TestCase3_Responsive.executor": "Run",
-    "TestNG.TestNG/SEO_for_tabs.xml.executor": "Run",
-    "git-widget-placeholder": "CS-Cart4.18.4b",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/SEO_for_product_tabs/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.PreConditions_Configurations.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SEO_for_tabs/TestNG.xml.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.TestCase1_BeforeProductTabs.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCase2_AfterH1Header.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCase3_Responsive.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestNG/SEO_for_tabs.xml.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CS-Cart4.18.4b&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/SEO_for_product_tabs/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="TestNG.TestCase1_BeforeProductTabs">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
@@ -173,12 +169,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.TestNG/SEO_for_tabs.xml" />
       <item itemvalue="TestNG.PreConditions_Configurations" />
       <item itemvalue="TestNG.TestCase1_BeforeProductTabs" />
       <item itemvalue="TestNG.TestCase2_AfterH1Header" />
       <item itemvalue="TestNG.TestCase3_Responsive" />
       <item itemvalue="TestNG.TestCase3_Responsive.checkProductTabsOnResponsive_TestCaseThree" />
+      <item itemvalue="TestNG.TestNG/SEO_for_tabs.xml" />
     </list>
     <recent_temporary>
       <list>
@@ -413,7 +409,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754571698209</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed Critical bug with collecting asserts!">
+      <option name="closed" value="true" />
+      <created>1758785635589</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1758785635589</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,6 +470,7 @@
     <MESSAGE value="Updated pom file" />
     <MESSAGE value="Little adaptation to the newest CS-Cart version." />
     <MESSAGE value="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!" />
+    <MESSAGE value="Fixed Critical bug with collecting asserts!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Critical bug with collecting asserts!" />
   </component>
 </project>

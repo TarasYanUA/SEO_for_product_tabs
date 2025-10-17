@@ -53,7 +53,7 @@ public class PreConditions_Configurations extends TestRunner {
         if (productSettings.closeNotificationWindowOfCore.exists())
             productSettings.closeNotificationWindowOfCore.click();
         productSettings.goToEditingProductPage("X-Box");
-        productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
+        productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         productSettings.tab_Addons.scrollIntoCenter().click();
         productSettings.field_ShortName.setValue("ShortName");
         productSettings.tab_Tags.scrollIntoCenter().click();

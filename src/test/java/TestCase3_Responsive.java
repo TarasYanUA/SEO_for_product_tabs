@@ -8,6 +8,7 @@ import storefront.ProductPage;
 import utils.Utils;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.sleep;
 
 /*
 Проверяем настройки из двух предыдущих тест-кейсов на теме Responsive.
@@ -67,6 +68,7 @@ public class TestCase3_Responsive extends TestRunner {
         //Проверяем, что панель товарных вкладок расположена после заголовка Н1
         assertsPage.assertElementExists(assertsPage.productTabsPosition_AfterH1);
 
+        sleep(2000);
         Selenide.screenshot("320 Product tabs panel - Panel after H1, Responsive");
 
         //Проверяем, что краткое название товара присутствует

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Fixed Critical bug with collecting asserts!">
+    <list default="true" id="d53985d0-3379-400a-87cb-18419632daa0" name="Changes" comment="Updated vocabularies in pom file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PreConditions_Configurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase3_Responsive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.PreConditions_Configurations">
+  <component name="RunManager" selected="TestNG.TestNG/SEO_for_tabs.xml">
     <configuration name="PreConditions_Configurations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SEO_for_product_tabs" />
       <option name="PACKAGE_NAME" value="" />
@@ -195,7 +193,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -431,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758876270952</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated vocabularies in pom file">
+      <option name="closed" value="true" />
+      <created>1760692501707</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1760692501707</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,6 +491,7 @@
     <MESSAGE value="Little adaptation to the newest CS-Cart version." />
     <MESSAGE value="* Full refactoring of the code!&#10;* Put all asserts into one class!&#10;* Put all common methods into the class Utils!" />
     <MESSAGE value="Fixed Critical bug with collecting asserts!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Critical bug with collecting asserts!" />
+    <MESSAGE value="Updated vocabularies in pom file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated vocabularies in pom file" />
   </component>
 </project>

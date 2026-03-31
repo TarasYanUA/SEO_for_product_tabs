@@ -13,7 +13,6 @@ public class ProductSettings {
         super();
     }
 
-    public SelenideElement closeNotificationWindowOfCore = $(".cm-notification-close-ajax");
     private final SelenideElement field_productSearch = $(".context-search__input");
     private final SelenideElement anyProductInSearchList = $(".products-list__image");
     public SelenideElement productTemplate = $("#elm_details_layout");

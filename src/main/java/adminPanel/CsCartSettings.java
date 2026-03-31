@@ -19,21 +19,23 @@ public class CsCartSettings implements CheckMenuToBeActive {
 
 
     //Меню "Товары"
-    private final SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
-    private final SelenideElement section_Products = $(By.id("products_products"));
+    SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
+    SelenideElement section_Products = $(By.id("products_products"));
 
 
     public ProductSettings navigateTo_ProductListPage() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Products.click();
+        Utils.closeAllNotifications();
         return new ProductSettings();
     }
 
 
     //Меню "Веб-сайт -- Темы"
-    private final SelenideElement menu_Website = $x("//span[text()='Веб-сайт']");
-    private final SelenideElement section_Themes = $(By.id("website_themes"));
-    private final SelenideElement button_ActivateTheme = $("a[href*='style=Bright_theme']");
+    SelenideElement menu_Website = $x("//span[text()='Веб-сайт']");
+    SelenideElement section_Themes = $(By.id("website_themes"));
+    SelenideElement button_ActivateBrightTheme = $("a[href*='style=Bright_theme']");
+    SelenideElement button_overwriteSelectedSettings = $("button[name='allow_overwrite']");
 
     //Меню "Веб-сайт -- Темы -- Вкладки товара"
     SelenideElement section_ProductTabs = $("a[href$='dispatch=tabs.manage']");
@@ -58,20 +60,23 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public void navigateTo_ProductTabs() {
         navigateTo_WebsiteThemes();
         section_ProductTabs.click();
+        Utils.closeAllNotifications();
     }
 
-    public void activateTheme() {
+    public void activateBrightTheme() {
         $("#image_img_bright_theme_Bright_theme").hover();
-        if (button_ActivateTheme.exists())
-            button_ActivateTheme.click();
+        if (button_ActivateBrightTheme.exists()) {
+            button_ActivateBrightTheme.click();
+            button_overwriteSelectedSettings.click();
+        }
     }
 
 
     //Меню "Модули -- Скачанные модули"
-    private final SelenideElement menu_Addons = $x("//span[text()='Модули']");
-    private final SelenideElement section_DownloadedAddons = $(By.id("addons_downloaded_add_ons"));
-    private final SelenideElement gearwheelOfAddon_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
-    private final SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
+    SelenideElement menu_Addons = $x("//span[text()='Модули']");
+    SelenideElement section_DownloadedAddons = $(By.id("addons_downloaded_add_ons"));
+    SelenideElement gearwheelOfAddon_SeoTabsAddon = $("tr#addon_ab__seo_product_tabs button.btn.dropdown-toggle");
+    SelenideElement section_SeoTabsSettings = $("div.nowrap a[href*='addon=ab__seo_product_tabs']");
     public SelenideElement gearwheelOfAddon_UniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
     public SelenideElement section_ThemeSettings = $("div.nowrap a[href$='abt__ut2.settings']");
 
@@ -97,10 +102,10 @@ public class CsCartSettings implements CheckMenuToBeActive {
 
 
     //Меню "Настройки -- Общие настройки -- Внешний вид"
-    private final SelenideElement menu_Settings = $(By.id("administration"));
-    private final SelenideElement menu_General = $("a[href$='section_id=General']");
-    private final SelenideElement section_Appearance = $("a[href$='section_id=Appearance']");
-    private final SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
+    SelenideElement menu_Settings = $(By.id("administration"));
+    SelenideElement menu_General = $("a[href$='section_id=General']");
+    SelenideElement section_Appearance = $("a[href$='section_id=Appearance']");
+    SelenideElement setting_DisplayProductDetailsInTabs = $("#field___product_details_in_tab_288");
 
 
     public void navigateTo_AppearanceSettings() {

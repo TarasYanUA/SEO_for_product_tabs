@@ -20,7 +20,7 @@ public class TestCase3_Responsive extends TestRunner {
         //Активируем тему "Responsive"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateTo_WebsiteThemes();
-        csCartSettings.activateTheme();
+        csCartSettings.activateBrightTheme();
 
         //Включаем настройку модуля - Перед вкладками товара
         SeoTabsSettings seoTabsSettings = csCartSettings.navigateTo_SeoTabsSettings();

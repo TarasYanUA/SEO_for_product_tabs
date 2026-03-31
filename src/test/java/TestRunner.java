@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 import storefront.CollectAssertMessages;
+import utils.Utils;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
  */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4201mvru/admin.php";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4201ultru/admin.php";
     private SoftAssert softAssert;
 
     @BeforeClass
@@ -33,6 +34,7 @@ public class TestRunner {
         $("#bp_off_bottom_panel").click();
         if ($(".cm-notification-close").exists())
             $(".cm-notification-close").click();
+        Utils.closeAllNotifications();
     }
 
     @AfterClass

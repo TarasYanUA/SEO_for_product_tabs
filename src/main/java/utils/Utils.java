@@ -2,8 +2,10 @@ package utils;
 
 import adminPanel.CsCartSettings;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Selenide.$$;
 
 import java.time.Duration;
 
@@ -41,5 +43,16 @@ public class Utils {
     public static void refreshPage(){
         Selenide.refresh();
         Selenide.sleep(2000);
+    }
+
+    public static void closeAllNotifications() {
+        ElementsCollection alertNotifications = $$(".close.cm-notification-close");
+
+        if (!alertNotifications.isEmpty()) {
+            for (int i = 0; i < alertNotifications.size(); i++) {
+                alertNotifications.first().click();
+                Selenide.sleep(500);
+            }
+        }
     }
 }

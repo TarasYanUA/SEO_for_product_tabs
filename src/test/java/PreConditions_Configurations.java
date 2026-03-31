@@ -50,8 +50,6 @@ public class PreConditions_Configurations extends TestRunner {
 
         //Настраиваем товар
         ProductSettings productSettings = csCartSettings.navigateTo_ProductListPage();
-        if (productSettings.closeNotificationWindowOfCore.exists())
-            productSettings.closeNotificationWindowOfCore.click();
         productSettings.goToEditingProductPage("X-Box");
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         productSettings.tab_Addons.scrollIntoCenter().click();
